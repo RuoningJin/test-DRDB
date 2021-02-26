@@ -91,17 +91,15 @@ cron.schedule('35 0 * * *', () => {
 
 });
 
-const config = require("./config/general");
+// const config = require("./config/general");
 
 const options = {
   cors: {
     // origin: '',
-    origin: config.frontendURL,
+    origin: ["http://127.0.0.1"],
     methods: ["GET", "POST"]
   }
 };
-
-// server.listen(4000, '127.0.0.1');
 
 const io = require("socket.io")(server, options);
 
