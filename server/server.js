@@ -2,12 +2,13 @@ const http = require("http");
 const app = require("./app");
 require("dotenv").config();
 
-const port = process.env.port || 3000;
+// const port = 3000;
+// const port = process.env.port || 3000;
 
 const server = http.createServer(app);
 
-const Server = server.listen(port, function () {
-  console.log("Listening to port " + port);
+const Server = server.listen('/tmp/drdb-server.sock', function () {
+  console.log("Listening to port ");
 });
 
 process.on('SIGTERM', shutDown);
@@ -94,12 +95,17 @@ const config = require("./config/general");
 
 const options = {
   cors: {
+    // origin: '',
     origin: config.frontendURL,
     methods: ["GET", "POST"]
   }
 };
 
+// server.listen(4000, '127.0.0.1');
+
 const io = require("socket.io")(server, options);
+
+io.listen(4000);
 
 io.on("connection", (socket) => {
 
