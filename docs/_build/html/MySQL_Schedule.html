@@ -1,0 +1,184 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Study schedule related tables &#8212; Developmental Research Management System 1.0.20200911 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Support related table" href="MySQL_Admin.html" />
+    <link rel="prev" title="Lab related table" href="MySQL_Lab.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="MySQL_Admin.html" title="Support related table"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="MySQL_Lab.html" title="Lab related table"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Developmental Research Management System 1.0.20200911 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="MySQL Database.html" accesskey="U">MySQL database</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="study-schedule-related-tables">
+<h1>Study schedule related tables<a class="headerlink" href="#study-schedule-related-tables" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="schedule-table">
+<h2>Schedule table<a class="headerlink" href="#schedule-table" title="Permalink to this headline">¶</a></h2>
+<p><strong>Schedule</strong> table stores informations about schedules of participation, which represents the visit of a family.</p>
+<div class="section" id="table-colums">
+<h3>Table colums<a class="headerlink" href="#table-colums" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><strong>AppointmentTime</strong>: <em>the date and time of a study schedule</em></dt>
+<dd>Type: datetime</dd>
+<dt><strong>Status</strong>: <em>the status of a schedule</em></dt>
+<dd>Type: enum(‘Confirmed’,’TBD’,’Rescheduling’,’Rescheduled’,’No Show’,’Cancelled’,’Rejected’)</dd>
+<dt><strong>FK_Family</strong>: <em>id of the family</em></dt>
+<dd>Type: int</dd>
+<dt><strong>Reminded</strong>: <em>whether a reminder email is sent</em></dt>
+<dd>Type: int</dd>
+<dt><strong>ThankYouEmail</strong>: <em>whether a thank you email is sent</em></dt>
+<dd>Type: int</dd>
+<dt><strong>Note</strong>: <em>note about the visit</em></dt>
+<dd>Type: text</dd>
+<dt><strong>Completed</strong>: <em>whether the schedule is completed</em></dt>
+<dd>Type: tinyint</dd>
+<dt><strong>ScheduledBy</strong>: <em>id of the lab member who scheduled the family</em></dt>
+<dd>Type: int</dd>
+<dt><strong>eventURL</strong>: <em>Google calendar event URL</em></dt>
+<dd>Type: varchar(150)</dd>
+<dt><strong>calendarEventId</strong>: <em>id of theGoogle calendar event</em></dt>
+<dd>Type: varchar(30)</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="appointment-table">
+<h2>Appointment table<a class="headerlink" href="#appointment-table" title="Permalink to this headline">¶</a></h2>
+<p><strong>Appointment</strong> table stores information about specific study appointment within each schedule. There can be multiple study appointments within a study schedule, involving multiple studies and/or multiple children within a family.</p>
+<div class="section" id="id1">
+<h3>Table colums<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><strong>FK_Study</strong>: <em>id of the study</em></dt>
+<dd>Type: int</dd>
+<dt><strong>FK_Child</strong>: <em>id of the child (participant)</em></dt>
+<dd>Type: int</dd>
+<dt><strong>FK_Schedule</strong>: <em>id of the study schedule</em></dt>
+<dd>Type: int</dd>
+<dt><strong>FK_Family</strong>: <em>id of the family</em></dt>
+<dd>Type: int</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="experimenter-assignment-table">
+<h2>Experimenter Assignment table<a class="headerlink" href="#experimenter-assignment-table" title="Permalink to this headline">¶</a></h2>
+<p><strong>Experimenter Assignment</strong> table stores the study assignment that a lab member is assigned as an experimenter.</p>
+<div class="section" id="id2">
+<h3>Table colums<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><strong>FK_Experimenter</strong>: <em>id of a lab member</em></dt>
+<dd>Type: int</dd>
+<dt><strong>FK_Appointment</strong>: <em>id of the study appointment that this member is assigned to</em></dt>
+<dd>Type: int</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Study schedule related tables</a><ul>
+<li><a class="reference internal" href="#schedule-table">Schedule table</a><ul>
+<li><a class="reference internal" href="#table-colums">Table colums</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#appointment-table">Appointment table</a><ul>
+<li><a class="reference internal" href="#id1">Table colums</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#experimenter-assignment-table">Experimenter Assignment table</a><ul>
+<li><a class="reference internal" href="#id2">Table colums</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="MySQL_Lab.html"
+                        title="previous chapter">Lab related table</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="MySQL_Admin.html"
+                        title="next chapter">Support related table</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/MySQL_Schedule.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="MySQL_Admin.html" title="Support related table"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="MySQL_Lab.html" title="Lab related table"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Developmental Research Management System 1.0.20200911 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="MySQL Database.html" >MySQL database</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Gabriel (Naiqi) Xiao.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

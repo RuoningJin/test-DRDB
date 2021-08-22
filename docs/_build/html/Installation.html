@@ -1,0 +1,355 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Installation &#8212; Developmental Research Management System 1.0.20200911 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MySQL database" href="MySQL Database.html" />
+    <link rel="prev" title="Welcome to DRDB System’s documentation!" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="MySQL Database.html" title="MySQL database"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to DRDB System’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Developmental Research Management System 1.0.20200911 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>DRDB system from PNB, McMaster University</p>
+<p>This is an open source system to manage participant database, study,
+study schedules, and research personnels.</p>
+<div class="section" id="how-to-deploy-the-system-on-a-linux-ubuntu-sever">
+<h2>How to deploy the system on a Linux (Ubuntu) sever<a class="headerlink" href="#how-to-deploy-the-system-on-a-linux-ubuntu-sever" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Node.js &amp; npm</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt update
+sudo apt install nodejs
+sudo apt install npm
+</pre></div>
+</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>MySQL 8 Server</dt>
+<dd><ul class="first last">
+<li>Instructions: <a class="reference external" href="https://phoenixnap.com/kb/how-to-install-mysql-on-ubuntu-18-04">https://phoenixnap.com/kb/how-to-install-mysql-on-ubuntu-18-04</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>git</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt install git
+</pre></div>
+</div>
+<ul class="simple">
+<li>nginx</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt install nginx
+</pre></div>
+</div>
+</div>
+<div class="section" id="download-the-latest-version-of-the-system">
+<h3>Download the latest version of the system<a class="headerlink" href="#download-the-latest-version-of-the-system" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~
+git clone https://github.com/naiqixiao/DRDB
+</pre></div>
+</div>
+<p>All frontend and backend codes should be downloaded to “~/DRDB” folder.</p>
+</div>
+<div class="section" id="mysql-database-setup">
+<h3>MySQL database setup<a class="headerlink" href="#mysql-database-setup" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Create a <em>user</em> and <em>password</em></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># in Terminal, enter mysql shell with root</span>
+<span class="c1"># if you haven&#39;t set password for root, press &#39;Enter&#39; key when the password prompt shows up.</span>
+
+mysql -u root -p
+</pre></div>
+</div>
+<div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="c1"># choose your own username and password to replace the following newuser and password respectively.</span>
+
+<span class="k">CREATE</span> <span class="n">USER</span> <span class="s1">&#39;newuser&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;password&#39;</span><span class="p">;</span>
+
+<span class="c1"># provide the user with access to the information they will need.</span>
+<span class="c1"># replacing the following newuser with the username that you just created.</span>
+
+<span class="k">GRANT</span> <span class="k">ALL</span> <span class="n">PRIVILEGES</span> <span class="k">ON</span> <span class="o">*</span> <span class="p">.</span> <span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;newuser&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
+
+<span class="c1"># reload all the privileges</span>
+
+<span class="k">FLUSH</span> <span class="n">PRIVILEGES</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Create a database under the user that you just created.</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># in Terminal, log in to the MySQL Server using the user just created.</span>
+
+mysql -u newuser -p
+</pre></div>
+</div>
+<div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="c1"># in MySQL shell, enter the following script to create a database named DRDB.</span>
+
+<span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">DRDB</span><span class="p">;</span>
+
+<span class="c1"># quit MySQL shell.</span>
+
+<span class="k">EXIT</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Import sample database</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># in Terminal, import the sample database with the user just created.</span>
+<span class="c1"># the sample sql database is in /DRDB/MySQL/Backup.sql</span>
+<span class="c1"># the following codes assume you import the sample database under the user named username. Replacing the following newuser with the username that you just created.</span>
+
+<span class="nb">cd</span> ~/DRDB
+mysql -u newuser -p DRDB &lt; MySQL/Backup.sql
+
+<span class="c1"># in Terminal, log in MySQL with the username</span>
+mysql -u newuser -p
+</pre></div>
+</div>
+<div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="c1"># in MySQL, enter the following command to setup automatic Age caculation.</span>
+
+<span class="k">USE</span> <span class="n">DRDB</span>
+
+<span class="k">CREATE</span> <span class="n">EVENT</span>
+<span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">age_update</span>
+<span class="k">ON</span> <span class="n">SCHEDULE</span> <span class="n">EVERY</span> <span class="mi">1</span> <span class="n">Day</span>
+<span class="n">STARTS</span> <span class="k">CURRENT_TIMESTAMP</span>
+<span class="n">DO</span>
+<span class="k">UPDATE</span> <span class="n">DRDB</span><span class="p">.</span><span class="n">Child</span>
+    <span class="kt">set</span> <span class="n">Age</span> <span class="o">=</span> <span class="nf">DATEDIFF</span><span class="p">(</span><span class="nf">CURDATE</span><span class="p">(),</span> <span class="n">DoB</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="backend-setup-and-configuration">
+<h3>Backend setup and configuration<a class="headerlink" href="#backend-setup-and-configuration" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Install all required modules</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/DRDB/server
+sudo npm install
+</pre></div>
+</div>
+<ul class="simple">
+<li>Set up MySQL database connection</li>
+<li>open ‘~/DRDB/server/config/general.js’</li>
+<li>update <em>Line 5 with the MySQL username and password</em> that you created
+in the previous step.</li>
+<li>for example, the following line indicates username of ‘admin’ and
+password of ‘password’</li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">exports</span><span class="p">.</span><span class="nx">sequelize</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Sequelize</span><span class="p">(</span><span class="s2">&quot;DRDB&quot;</span><span class="p">,</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="p">{</span>
+<span class="nx">host</span><span class="o">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+<span class="nx">dialect</span><span class="o">:</span> <span class="s2">&quot;mysql&quot;</span><span class="p">,</span>
+<span class="nx">logging</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="nx">define</span><span class="o">:</span> <span class="p">{</span>
+    <span class="c1">// timestamps: false,</span>
+    <span class="nx">freezeTableName</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">},</span>
+<span class="nx">timeZone</span><span class="o">:</span> <span class="s2">&quot;America/Toronto&quot;</span><span class="p">,</span>
+<span class="nx">pool</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">max</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">min</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">acquire</span><span class="o">:</span> <span class="mi">30000</span><span class="p">,</span>
+    <span class="nx">idle</span><span class="o">:</span> <span class="mi">10000</span><span class="p">,</span>
+<span class="p">},</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Set up the URL of the system</li>
+<li>open ‘~/DRDB/server/config/general.js’</li>
+<li>update <em>Line 1</em> with the URL of the system</li>
+<li>Run backend server with pm2</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/DRDB/server
+
+sudo npm install --save pm2 -g
+
+pm2 start server.js
+</pre></div>
+</div>
+</div>
+<div class="section" id="frontend-setup">
+<h3>Frontend setup<a class="headerlink" href="#frontend-setup" title="Permalink to this headline">¶</a></h3>
+<p>install all required modules</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/DRDB/client
+sudo npm install
+</pre></div>
+</div>
+<p>deploy frontend server</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/DRDB/client
+npm run build
+</pre></div>
+</div>
+<p>Configure nginx</p>
+<p>Instructions:
+<a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04">https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04</a></p>
+<p>You might need to run the following script to enable firewall</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo ufw <span class="nb">enable</span>
+</pre></div>
+</div>
+<p>Run frontend server with nginx</p>
+<ul class="simple">
+<li>Copy the ready-to-be-deployed frontend codes to ngnix folder</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/DRDB/client
+sudo cp -r -T dist /var/www/html/DRDB
+</pre></div>
+</div>
+<ul class="simple">
+<li>Configure ngnix</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the following script to configure ngnix services</span>
+
+sudo nano /etc/nginx/sites-available/default
+
+<span class="c1"># Change &#39;root /var/www/html;&#39; to &#39;root /var/www/html/DRDB;&#39;</span>
+
+<span class="c1"># Change &#39; location / {} &#39; to</span>
+
+location /api/ <span class="o">{</span>
+    proxy_pass http://localhost:3000<span class="p">;</span>
+    proxy_http_version <span class="m">1</span>.1<span class="p">;</span>
+    proxy_set_header Upgrade <span class="nv">$http_upgrade</span><span class="p">;</span>
+    proxy_set_header Connection <span class="s1">&#39;upgrade&#39;</span><span class="p">;</span>
+    proxy_set_header Host <span class="nv">$host</span><span class="p">;</span>
+    proxy_cache_bypass <span class="nv">$http_upgrade</span><span class="p">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Restart ngnix service</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo systemctl restart nginx
+</pre></div>
+</div>
+<p>You should be able to access the system with the ip address of your
+server by now.</p>
+</div>
+</div>
+<div class="section" id="how-to-upgrade-the-system">
+<h2>How to upgrade the system<a class="headerlink" href="#how-to-upgrade-the-system" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/DRDB
+git pull
+
+<span class="c1"># update npm packages for client and server folders</span>
+<span class="nb">cd</span> ~/DRDB/client
+npm update
+
+<span class="nb">cd</span> ~/DRDB/server
+npm update
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#how-to-deploy-the-system-on-a-linux-ubuntu-sever">How to deploy the system on a Linux (Ubuntu) sever</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#download-the-latest-version-of-the-system">Download the latest version of the system</a></li>
+<li><a class="reference internal" href="#mysql-database-setup">MySQL database setup</a></li>
+<li><a class="reference internal" href="#backend-setup-and-configuration">Backend setup and configuration</a></li>
+<li><a class="reference internal" href="#frontend-setup">Frontend setup</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#how-to-upgrade-the-system">How to upgrade the system</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to DRDB System’s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="MySQL Database.html"
+                        title="next chapter">MySQL database</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Installation.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="MySQL Database.html" title="MySQL database"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to DRDB System’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Developmental Research Management System 1.0.20200911 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Gabriel (Naiqi) Xiao.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

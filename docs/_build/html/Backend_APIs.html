@@ -1,0 +1,749 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Backend REST APIs &#8212; Developmental Research Management System 1.0.20200911 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Frontend" href="Frontend.html" />
+    <link rel="prev" title="Backend (written in NodeJS)" href="Backend.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Frontend.html" title="Frontend"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Backend.html" title="Backend (written in NodeJS)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Developmental Research Management System 1.0.20200911 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="Backend.html" accesskey="U">Backend (written in NodeJS)</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="backend-rest-apis">
+<h1>Backend REST APIs<a class="headerlink" href="#backend-rest-apis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="family-api">
+<h2>Family API<a class="headerlink" href="#family-api" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Create a family</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/family/add</strong></li>
+<li>description: create a new family</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Create multiple families</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/family/addBatch</strong></li>
+<li>description: create multiple new families</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Update family information</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/family</strong></li>
+<li>description: update the information of a family</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Search families</dt>
+<dd><ul class="first last">
+<li>method: <strong>GET /api/family</strong></li>
+<li>description: search families based on criteria</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Delete a family</dt>
+<dd><ul class="first last">
+<li>method: <strong>DELETE /api/family</strong></li>
+<li>description: delete a family from the database</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="child-api">
+<h2>Child API<a class="headerlink" href="#child-api" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Create a child</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/child/add</strong></li>
+<li>description: add a child to a family</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Update child information</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/child</strong></li>
+<li>description: update the information of a child</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Search children</dt>
+<dd><ul class="first last">
+<li>method: <strong>GET /api/child</strong></li>
+<li>description: search children based on criteria</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Update sibling information</dt>
+<dd><ul class="first last">
+<li>method: <strong>GET /api/child/siblings</strong></li>
+<li>description: update the sibling information of a child</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Delete a child</dt>
+<dd><ul class="first last">
+<li>method: <strong>DELETE /api/child</strong></li>
+<li>description: delete a child from the database</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="conversation-api">
+<h2>Conversation API<a class="headerlink" href="#conversation-api" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Create a conversation</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/conversation/</strong></li>
+<li>description: add a conversation</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Delete a conversation</dt>
+<dd><ul class="first last">
+<li>method: <strong>DELETE /api/conversation</strong></li>
+<li>description: delete a conversation record from the database</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="lab-api">
+<h2>Lab API<a class="headerlink" href="#lab-api" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Create a lab</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/lab/add</strong></li>
+<li>description: create a new lab</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Update lab information</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/</strong></li>
+<li>description: update the information of a lab</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Delete a lab</dt>
+<dd><ul class="first last">
+<li>method: <strong>DELETE /api/lab</strong></li>
+<li>description: delete a lab from the database</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="personnel-api">
+<h2>Personnel API<a class="headerlink" href="#personnel-api" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Create a lab member</dt>
+<dd><ul class="first last">
+<li>see “Register” in the User API</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Update lab member information</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/personnel</strong></li>
+<li>description: update the information of a lab member</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Search lab members</dt>
+<dd><ul class="first last">
+<li>method: <strong>GET /api/personnel</strong></li>
+<li>description: search lab members based on criteria</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Delete a lab member</dt>
+<dd><ul class="first last">
+<li>method: <strong>DELETE /api/personnel</strong></li>
+<li>description: delete a lab member from the database</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="user-api">
+<h2>User API<a class="headerlink" href="#user-api" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Register a lab member</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/user/signup</strong></li>
+<li>description: create a new lab member</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Login to the system</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/user/login</strong></li>
+<li>description: login to the system</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Login check</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/user/checklogin</strong></li>
+<li>description: check whether the user is already logged in</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Update login password</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/user/changePassword</strong></li>
+<li>description: update login password</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Reset login password</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/user/resetPassword</strong></li>
+<li>description: reset login password to a random one, if a user forgets his/her password</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="study-api">
+<h2>Study API<a class="headerlink" href="#study-api" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Create a study</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/study/add</strong></li>
+<li>description: create a new study</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Update study information</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/study</strong></li>
+<li>description: update the information of a study</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Search studies</dt>
+<dd><ul class="first last">
+<li>method: <strong>GET /api/study</strong></li>
+<li>description: search studies based on criteria</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Delete a study</dt>
+<dd><ul class="first last">
+<li>method: <strong>DELETE /api/study</strong></li>
+<li>description: delete a study from the database</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="study-assignment-api">
+<h2>Study assignment API<a class="headerlink" href="#study-assignment-api" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Create eligible experimenters for a study</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/experimenter/experimenter</strong></li>
+<li>description: assign experimenters to a study</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Assign a study to a lab member</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/experimenter/studies</strong></li>
+<li>description: assign a study to lab members</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="schedule-api">
+<h2>Schedule API<a class="headerlink" href="#schedule-api" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Create a study schedule</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/schedule/add</strong></li>
+<li>description: add a study schedule</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Update study schedule information</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/schedule</strong></li>
+<li>description: update the information of a study schedule</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Send a reminder email for an upcoming schedule</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/schedule/remind</strong></li>
+<li>description: send a reminder email for an upcoming schedule</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Mark a study schedule is completed</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/schedule/complete</strong></li>
+<li>description: mark a study schedule is completed</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Search study schedules</dt>
+<dd><ul class="first last">
+<li>method: <strong>GET /api/schedule</strong></li>
+<li>description: search study schedules based on criteria</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Search study schedules</dt>
+<dd><ul class="first last">
+<li>method: <strong>GET /api/schedule/today</strong></li>
+<li>description: search today’s study schedules</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Search study schedules within this week</dt>
+<dd><ul class="first last">
+<li>method: <strong>GET /api/schedule/week</strong></li>
+<li>description: search study schedules from the Monday to the Sunday of this week</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Delete a study schedule</dt>
+<dd><ul class="first last">
+<li>method: <strong>DELETE /api/schedule</strong></li>
+<li>description: delete a study schedule from the database</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="appointment-api">
+<h2>Appointment API<a class="headerlink" href="#appointment-api" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Create a study appointment</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/appointment/add</strong></li>
+<li>description: add a study appointment to a study schedule</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Update a study appointment</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/appointment</strong></li>
+<li>description: update the Experimenter information of a study appointment,</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Delete a study appointment</dt>
+<dd><ul class="first last">
+<li>method: <strong>DELETE /api/appointment</strong></li>
+<li>description: delete a study appointment from a study schedule</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="experimenter-api">
+<h2>Experimenter API<a class="headerlink" href="#experimenter-api" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Assign experimenters to a study appointment</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/experimentAssignment</strong></li>
+<li>description: assign lab members to a study appointment</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="google-service-api">
+<h2>Google service API<a class="headerlink" href="#google-service-api" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Send an email</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/gmail/send</strong></li>
+<li>description: send an email to parents from lab email</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Create a calendar event</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/cal/</strong></li>
+<li>description: add a Google Calendar event for a study schedule</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Update a calendar event</dt>
+<dd><ul class="first last">
+<li>method: <strong>PATCH /api/cal/</strong></li>
+<li>description: update a Google Calendar event</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Delete a calendar event</dt>
+<dd><ul class="first last">
+<li>method: <strong>DELETE /api/cal/</strong></li>
+<li>description: delete a Google Calendar event</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Create Google Credentials</dt>
+<dd><ul class="first last">
+<li>method: <strong>GET /api/extAPIs</strong></li>
+<li>description: create Google Credentials for a lab</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Setup a token for a Google account</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/extAPIs</strong></li>
+<li>description: setup a token for a Google account used by a lab</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Setup a token for adminstrator account</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/extAPIs/admin</strong></li>
+<li>description: setup the Google account for adminstrator account</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Retrieve email information for the Admina and lab account</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/extAPIs/email</strong></li>
+<li>description: Retrieve email addresses and displayName for the Admina and lab account</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="feedback-api">
+<h2>Feedback API<a class="headerlink" href="#feedback-api" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Create feedback</dt>
+<dd><ul class="first last">
+<li>method: <strong>POST /api/feedback</strong></li>
+<li>description: send a feedback email to the adminstrator</li>
+<li>request example:</li>
+<li>response example:</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Backend REST APIs</a><ul>
+<li><a class="reference internal" href="#family-api">Family API</a></li>
+<li><a class="reference internal" href="#child-api">Child API</a></li>
+<li><a class="reference internal" href="#conversation-api">Conversation API</a></li>
+<li><a class="reference internal" href="#lab-api">Lab API</a></li>
+<li><a class="reference internal" href="#personnel-api">Personnel API</a></li>
+<li><a class="reference internal" href="#user-api">User API</a></li>
+<li><a class="reference internal" href="#study-api">Study API</a></li>
+<li><a class="reference internal" href="#study-assignment-api">Study assignment API</a></li>
+<li><a class="reference internal" href="#schedule-api">Schedule API</a></li>
+<li><a class="reference internal" href="#appointment-api">Appointment API</a></li>
+<li><a class="reference internal" href="#experimenter-api">Experimenter API</a></li>
+<li><a class="reference internal" href="#google-service-api">Google service API</a></li>
+<li><a class="reference internal" href="#feedback-api">Feedback API</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Backend.html"
+                        title="previous chapter">Backend (written in NodeJS)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Frontend.html"
+                        title="next chapter">Frontend</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Backend_APIs.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Frontend.html" title="Frontend"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Backend.html" title="Backend (written in NodeJS)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Developmental Research Management System 1.0.20200911 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="Backend.html" >Backend (written in NodeJS)</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Gabriel (Naiqi) Xiao.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

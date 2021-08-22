@@ -1,0 +1,241 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Participant related table &#8212; Developmental Research Management System 1.0.20200911 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lab related table" href="MySQL_Lab.html" />
+    <link rel="prev" title="MySQL database" href="MySQL Database.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="MySQL_Lab.html" title="Lab related table"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="MySQL Database.html" title="MySQL database"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Developmental Research Management System 1.0.20200911 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="MySQL Database.html" accesskey="U">MySQL database</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="participant-related-table">
+<h1>Participant related table<a class="headerlink" href="#participant-related-table" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="family-table">
+<h2>Family table<a class="headerlink" href="#family-table" title="Permalink to this headline">¶</a></h2>
+<p><strong>Family</strong> table stores family related information, including contact information, parents’ demographic information, and some recruitment/participation notes.</p>
+<div class="section" id="table-colums">
+<h3>Table colums<a class="headerlink" href="#table-colums" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><strong>NamePrimary</strong>: <em>mother’s (or primary caregiver’s) name</em></dt>
+<dd>Type: varchar(30)</dd>
+<dt><strong>NameSecondary</strong>: <em>father’s (or secondary caregiver’s) name</em></dt>
+<dd>Type: varchar(30)</dd>
+<dt><strong>Email</strong>: <em>email address</em></dt>
+<dd>Type: varchar(40)</dd>
+<dt><strong>Phone</strong>: <em>phone number</em></dt>
+<dd>Type: varchar(10)</dd>
+<dt><strong>RacePrimary</strong>: <em>mother’s (or primary caregiver’s) race</em></dt>
+<dd>Type: varchar(20)</dd>
+<dt><strong>RaceSecondary</strong>: <em>father’s (or secondary caregiver’s) race</em></dt>
+<dd>Type: varchar(20)</dd>
+<dt><strong>LanguagePrimary</strong>: <em>mother’s (or primary caregiver’s) mostly used language</em></dt>
+<dd>Type: varchar(20)</dd>
+<dt><strong>LanguageSecondary</strong>: <em>father’s (or secondary caregiver’s) mostly used language</em></dt>
+<dd>Type: varchar(20)</dd>
+<dt><strong>EnglishPercent</strong>: <em>percentage of english spoken at home</em></dt>
+<dd>Type: int</dd>
+<dt><strong>Note</strong>: <em>notes about the family</em></dt>
+<dd>Type: text</dd>
+<dt><strong>Vehicle</strong>: <em>vehicle descriptions</em></dt>
+<dd>Type: text</dd>
+<dt><strong>Address</strong>: <em>home address or postal code</em></dt>
+<dd>Type: text</dd>
+<dt><strong>LastContactDate</strong>: <em>the date the family is contacted by us</em></dt>
+<dd>Type: date</dd>
+<dt><strong>NextContactDate</strong>: <em>the earliest date this family will show up in the search for eligible participants on the Schedule Page</em></dt>
+<dd>Type: date</dd>
+<dt><strong>NextContactNote</strong>: <em>the nature for the next contact, such as to follow up a undecided study schedule</em></dt>
+<dd>Type: text</dd>
+<dt><strong>RecruitmentMethod</strong>: <em>how this family was recruited</em></dt>
+<dd>Type: varchar(30)</dd>
+<dt><strong>AssignedLab</strong>: <em>id of lab, which has an on-going study with this family</em></dt>
+<dd>Type: int</dd>
+<dt><strong>CreatedBy</strong>: <em>id of the lab member who created this family record</em></dt>
+<dd>Type: int</dd>
+<dt><strong>UpdatedBy</strong>: <em>id of the lab member who updated this family’s inforamtion</em></dt>
+<dd>Type: int</dd>
+<dt><strong>NoMoreContact</strong>: <em>should this family be contacted in the future</em></dt>
+<dd>Type: int</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="child-table">
+<h2>Child table<a class="headerlink" href="#child-table" title="Permalink to this headline">¶</a></h2>
+<p><strong>Child</strong> table stores child related information.</p>
+<div class="section" id="id1">
+<h3>Table colums<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><strong>Name</strong>: <em>name of the child</em></dt>
+<dd>Type: varchar(30)</dd>
+<dt><strong>Sex</strong>: <em>biological sex of the child</em></dt>
+<dd>Type: enum(‘F’,’M’)</dd>
+<dt><strong>DoB</strong>: <em>date of birth</em></dt>
+<dd>Type: date</dd>
+<dt><strong>Age</strong>: <em>age in days</em></dt>
+<dd>Type: int</dd>
+<dt><strong>Language</strong>: <em>mostly spoken language</em></dt>
+<dd>Type: varchar(45)</dd>
+<dt><strong>IdWithinFamily</strong>: <em>code for the child within a family, such as a, b, c,&amp; d</em></dt>
+<dd>Type: varchar(1)</dd>
+<dt><strong>HearingLoss</strong>: <em>whether this child has hearing loss</em></dt>
+<dd>Type: int</dd>
+<dt><strong>VisionLoss</strong>: <em>whether this child has vision loss</em></dt>
+<dd>Type: int</dd>
+<dt><strong>PrematureBirth</strong>: <em>whether this child was born prematurely</em></dt>
+<dd>Type: int</dd>
+<dt><strong>Illness</strong>: <em>whether this child has any illness</em></dt>
+<dd>Type: int</dd>
+<dt><strong>BirthWeight</strong>: <em>birth weight</em></dt>
+<dd>Type: int</dd>
+<dt><strong>Note</strong>: <em>notes for this child</em></dt>
+<dd>Type: text</dd>
+<dt><strong>FK_Family</strong>: <em>id of the family this child belongs to</em></dt>
+<dd>Type: int</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="sibling-table">
+<h2>Sibling table<a class="headerlink" href="#sibling-table" title="Permalink to this headline">¶</a></h2>
+<p><strong>Sibling</strong> table stores the kinships among children.</p>
+<div class="section" id="id2">
+<h3>Table colums<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><strong>FK_Child</strong>: <em>id of a child</em></dt>
+<dd>Type: int</dd>
+<dt><strong>Sibling</strong>: <em>id of the sibling of this child</em></dt>
+<dd>Type: int</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="conversations-table">
+<h2>Conversations table<a class="headerlink" href="#conversations-table" title="Permalink to this headline">¶</a></h2>
+<p><strong>Conversations</strong> table stores important conversations with a family. These conversation will help future communication with this family.</p>
+<div class="section" id="id3">
+<h3>Table colums<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><strong>Conversation</strong>: <em>content of a conversation</em></dt>
+<dd>Type: text</dd>
+<dt><strong>Time</strong>: <em>the date when this conversation is stored</em></dt>
+<dd>Type: datetime</dd>
+<dt><strong>FK_Family</strong>: <em>id of the family this conversation relates to</em></dt>
+<dd>Type: int</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Participant related table</a><ul>
+<li><a class="reference internal" href="#family-table">Family table</a><ul>
+<li><a class="reference internal" href="#table-colums">Table colums</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#child-table">Child table</a><ul>
+<li><a class="reference internal" href="#id1">Table colums</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sibling-table">Sibling table</a><ul>
+<li><a class="reference internal" href="#id2">Table colums</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#conversations-table">Conversations table</a><ul>
+<li><a class="reference internal" href="#id3">Table colums</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="MySQL Database.html"
+                        title="previous chapter">MySQL database</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="MySQL_Lab.html"
+                        title="next chapter">Lab related table</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/MySQL_Family.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="MySQL_Lab.html" title="Lab related table"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="MySQL Database.html" title="MySQL database"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Developmental Research Management System 1.0.20200911 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="MySQL Database.html" >MySQL database</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Gabriel (Naiqi) Xiao.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

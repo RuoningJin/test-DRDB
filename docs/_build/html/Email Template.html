@@ -1,0 +1,261 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Email Template &#8212; Developmental Research Management System 1.0.20200911 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Role-based Rules" href="Role-based Rules.html" />
+    <link rel="prev" title="Frontend" href="Frontend.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Role-based Rules.html" title="Role-based Rules"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Frontend.html" title="Frontend"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Developmental Research Management System 1.0.20200911 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="email-template">
+<h1>Email Template<a class="headerlink" href="#email-template" title="Permalink to this headline">¶</a></h1>
+<p>The DRDB system can send tailored emails to participants and lab managers to inform study schedules, reminders, etc.</p>
+<p>To make the emailling system run properly, users need to setup several email templates in the system.</p>
+<p>You need to set up a Google account to enable functions like sending email and creating calendar events.</p>
+<p>For a detailed instruction, <a class="reference external" href="https://docs.google.com/presentation/d/1Q09bJj1h_86FVS9zOVIZlwpnh1sPtRrlZxolPZ12PlA/edit?usp=sharing/">click here</a>.</p>
+<div class="section" id="email-template-components">
+<h2>Email template components<a class="headerlink" href="#email-template-components" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Lab specific email components, which is set up in <strong>Setting</strong> page</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>email opening (<strong>currently not used</strong>)</dt>
+<dd>a greeting message specific to the lab</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>transportation instructions</dt>
+<dd>instructions for how to come to the lab</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>email closing</dt>
+<dd>a closing message specific to the lab, such as “looking forward to seeing you!”</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Study specific email components, which is setup in <strong>Study management</strong> page</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>email template</dt>
+<dd>a brief introduction of the study</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>reminder template</dt>
+<dd>study specific reminder for participants, such as installing Zoom before an online study</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="key-words">
+<h2>Key words<a class="headerlink" href="#key-words" title="Permalink to this headline">¶</a></h2>
+<p>Key words, such as child’s name and pronouns can be placed in email templates in the form of placeholders.
+The key word placeholder has to follow <strong>${{Key Word}}</strong> format.</p>
+<dl class="docutils">
+<dt>The available key words are:</dt>
+<dd><ul class="first last simple">
+<li>childName</li>
+<li>he/she</li>
+<li>him/her</li>
+<li>his/her</li>
+</ul>
+</dd>
+</dl>
+<p>These key words will be replaced with corresponding information in generated emails.</p>
+</div>
+<div class="section" id="study-scheduling-emails">
+<h2>Study scheduling emails<a class="headerlink" href="#study-scheduling-emails" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Structure</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>email opening (no setting is available at the momemnt)</dt>
+<dd><ul class="first last">
+<li>for confirming an appointment: “Thanks for your support to our research! This is a confirmation for your visit with ${{childName}} on ${{AppointTime}}.”</li>
+<li>for updating an appointment: “This is an update on your visit with ${{childName}} on ${{AppointTime}}.”</li>
+<li>to introduce a study to parents: We are ${{labName}}. We would love to have you and ${{childName}} to participate in our study. Here is the information about the study:”</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>study specific email template</dt>
+<dd><ul class="first last">
+<li>if there are more than one studies, each study’s template will be presented in separate paragraphs.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>transportation instructions</li>
+<li>email closing</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>When will the email be sent?</dt>
+<dd><ul class="first last">
+<li>during scheduling a study appointment</li>
+<li>after updating an existing study appointment</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p><strong>Email example</strong></p>
+<a class="reference internal image-reference" href="_images/ScheduleEmailTemplate.jpeg"><img alt="_images/ScheduleEmailTemplate.jpeg" src="_images/ScheduleEmailTemplate.jpeg" style="width: 70em;" /></a>
+</div>
+<div class="section" id="reminder-emails">
+<h2>Reminder emails<a class="headerlink" href="#reminder-emails" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Structure</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>reminder opening (no setting is available at the momemnt)</dt>
+<dd><ul class="first last">
+<li>in-person lab studies: “This is a reminder for your visit to ${{LabName}} with ${{childName}} on ${{AppointTime}}.”</li>
+<li>online studies: “This is ${{LabName}}. Just a reminder that you and ${{childName}} will participate our online study.”</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>reminder template</li>
+<li>transportation instructions (for in-person studies)</li>
+<li>email closing</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>When will the email be sent?</dt>
+<dd><ul class="first last">
+<li>Everyday at 3pm, reminding emails will be sent to parents with appointments on the next day</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>What if a participant doesn’t have email in the system?</dt>
+<dd>An email will be sent to the lab email to remind researchers of calling the participant.</dd>
+</dl>
+</li>
+</ul>
+<p><strong>Email example</strong></p>
+<a class="reference internal image-reference" href="_images/ReminderEmailTemplate.jpeg"><img alt="_images/ReminderEmailTemplate.jpeg" src="_images/ReminderEmailTemplate.jpeg" style="width: 70em;" /></a>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Email Template</a><ul>
+<li><a class="reference internal" href="#email-template-components">Email template components</a></li>
+<li><a class="reference internal" href="#key-words">Key words</a></li>
+<li><a class="reference internal" href="#study-scheduling-emails">Study scheduling emails</a></li>
+<li><a class="reference internal" href="#reminder-emails">Reminder emails</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Frontend.html"
+                        title="previous chapter">Frontend</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Role-based Rules.html"
+                        title="next chapter">Role-based Rules</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Email Template.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Role-based Rules.html" title="Role-based Rules"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Frontend.html" title="Frontend"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Developmental Research Management System 1.0.20200911 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Gabriel (Naiqi) Xiao.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>
